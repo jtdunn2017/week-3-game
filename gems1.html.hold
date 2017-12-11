@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Gems Game</title>
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Jquery hook -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+    crossorigin="anonymous">
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>>
+  
+</head>
+<body>
+  <div  id="mainPage">
+   
+  <!--  create a div for the target number and score counters -->
+ 
+  <script type="text/javascript">
+
+
+// for number generation ---Math.floor((Math.random() * 50) + 1);
+
+   $(document).ready(function () {
+     // need to make sure the gems dont add up to exceed target
+     // generate a random target numer
+     var targetNum = Math.floor((Math.random() * 50) + 1);
+     //generate random numbers for each of the gems
+     var rubyNum = Math.floor((Math.random() * 5) + 1);
+     var sapphireNum = Math.floor((Math.random() * 8) + 1);
+     var emeraldNum = Math.floor((Math.random() * 12) + 1);
+     var topazNum = Math.floor((Math.random() * 16) + 1);
+     var divArray =[ "pagetitle","targetNum","winsLosses","gemButtons","scoreTitle","yourScore"];
+     var gemArray =[ "ruby","sapphire","emerald","topaz"];
+     // counter for user score
+     var userTotal = 0;
+     var newPageDiv=" ";
+     // loop to create divisions
+     for (var i = 0; i < divArray.length; i++) {
+         newPageDiv = $("<div>" + divArray[i] + "</div>");
+         console.log("DIV: "+newPageDiv);
+         $("#mainDiv").append(newPageDiv);
+    }
+
+    // setup buttons for gems
+    
+     var rubyButton=$("<button>");
+     rubyButton.addClass("gem-button ruby");
+     $("#gemButtons").append(rubyButton);
+     var sapphireButton=$("<button>");
+     sapphireButton.addClass("gem-button sapphire");
+     $("#gemButtons").append(sapphireButton);
+     var emeraldButton=$("<button>");
+     emeraldButton.addClass("gem-button emerald");
+     $("#gemButtons").append(emeraldButton);
+     var topazButton=$("<button>");
+     topazButton.addClass("gem-button topaz");
+     $("#gemButtons").append(topazButton);
+
+    
+  
+     //   $("button").click(function(){
+     //   $("p").hide();
+    });
+     // });
+    </script>
+
+</body>
+
+</html>

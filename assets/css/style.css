@@ -1,0 +1,35 @@
+body{
+    max-height: 480px;
+    max-width: 1000px;
+    background-image: url('../images/old_map.png');
+    background-repeat: 'repeat-n';
+} 
+* {
+    box-sizing: border-box;
+  }
+  
+#pageTitle{
+  
+    color: white;
+    background-color:rgb(141, 77, 39);
+    max-width: 200px;
+    border:black solid 4px;
+    font-size: 18px;
+    
+}
+#gameInstructions{
+    color: rgb(5, 95, 5);
+    background-color: rgb(236, 224, 224);
+    font-size: 12px;
+    max-width: 300px;
+}
+#targetNum{}
+#scoreStatus{}
+#gameTotals{
+    color: red;
+    background-color: darkgreen;
+    float:left;
+    
+}
+
+

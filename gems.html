@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Gems</title>
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Jquery hook -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+    crossorigin="anonymous">
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>>
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="row" id="pageTitle">
+      <div class="col-md-8">
+        <p>Crystal Collector!</p>
+      
+      </div>
+    </div>
+    <hr>
+
+
+    <!--  create a div for the instructions -->
+    <div class="row" id="gameInstructions">
+      <div class="col-md-12">
+        <p>You will be given a random number at the start of the game.
+          <hr>
+           There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total
+          score.
+          <hr>
+           You win the game by matching your total score to the random number, you lose the game if your total score goes
+          above the random number.
+          <hr>
+           The value of each crystal is hidden from you, until you click on it.
+           Each time the game starts, the gme will change the values of each crystal.
+        </p>
+      </div>
+    </div>
+
+
+    <!--  create a div for the target number and score counters -->
+    <div class="row" id="targetAndScores">
+      <div id="targetNum" class="col-md-4">
+      </div>
+      <div id="scoreStatus" class="col-md-4">
+      </div>
+    </div>
+
+    <!--  create a div for the gem buttons -->
+    <div class="row" id="gemSelection">
+      <div class="col-xs-1 col-md-1">
+        <a href="#" class="thumbnail">
+          <img src="assets/images/ruby2.jpg" alt="Image not found.">
+        </a>
+      </div>
+      <div class="col-xs-1 col-md-1">
+        <a href="#" class="thumbnail image-responsive">
+          <img src="assets/images/blue-sapphire2.jpg" width="80px" height="100px" alt="Image not found.">
+        </a>
+      </div>
+      <div class="col-xs-1 col-md-1">
+        <a href="#" class="thumbnail">
+          <img src="assets/images/emerald2.jpg" alt="Image not found.">
+        </a>
+      </div>
+      <div class="col-xs-1 col-md-1">
+        <a href="#" class="thumbnail">
+          <img src="assets/images/Yellow-Topaz2.jpg" alt="Image not found.">
+        </a>
+      </div>
+    </div>
+    <!-- create columns for the target number and wins vs losses -->
+    <div class="row">
+        <div id="targetScore" class="col-md-4">
+        </div>
+        <div id="gameTotals" class="col-md-4">
+          <h3>Your total score is:</h3>
+        </div>
+      </div>
+
+    <!--  create a div for the target number and score counters -->
+    <div class="row">
+      <div id="closingHeader" class="col-md-4">
+      </div>
+    </div>
+    <div class="row">
+      <div id="yourScore" class="col-md-6">
+      </div>
+    </div>
+
+
+    <script type="text/javascript">
+
+      $(document).ready(function () {
+        //
+        // Define/initialize variables
+        //
+        // Generate a random target number
+        var targetNum = Math.floor((Math.random() * 50) + 1);
+        //generate random numbers for each of the gems
+        var rubyNum = Math.floor((Math.random() * 5) + 1);
+        var sapphireNum = Math.floor((Math.random() * 8) + 1);
+        var emeraldNum = Math.floor((Math.random() * 12) + 1);
+        var topazNum = Math.floor((Math.random() * 16) + 1);
+        // initialize arrays
+        var divArray = ["pagetitle", "targetNum", "winsLosses", "gemButtons", "scoreTitle", "yourScore"];
+        var gemArray = ["ruby", "sapphire", "emerald", "topaz"];
+        // counter for user score
+        var userTotal = 0;
+        var newPageDiv = " ";
+
+
+        // setup buttons for gems
+
+        var rubyButton = $("<button>");
+        rubyButton.addClass("gem-button ruby");
+        $("#ruby").append(rubyButton);
+        var sapphireButton = $("<button>");
+        sapphireButton.addClass("gem-button sapphire");
+        $("#sapphire").append(sapphireButton);
+        var emeraldButton = $("<button>");
+        emeraldButton.addClass("gem-button emerald");
+        $("#emerald").append(emeraldButton);
+        var topazButton = $("<button>");
+        topazButton.addClass("gem-button topaz");
+        $("#topaz").append(topazButton);
+
+
+
+      });
+    </script>
+
+</body>
+
+</html>
